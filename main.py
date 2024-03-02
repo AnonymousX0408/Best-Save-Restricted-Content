@@ -85,11 +85,11 @@ def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 			except Exception as e: 
 				bot.send_message(message.chat.id,f"**Error** : __{e}__", reply_to_message_id=message.id)
 				return
-			bot.send_message(message.chat.id,"**Chat Joined**", reply_to_message_id=message.id)
+			bot.send_message(message.chat.id,"**Sᴜᴄᴄᴇssғᴜʟʟʏ Sᴀᴠᴇᴅ Tʜɪs Cʜᴀɴɴᴇʟ Iɴ Mʏ Dᴀᴛᴀʙᴀsᴇ Nᴏᴡ Sᴇɴᴅ Mʏ Aɴʏ Lɪɴᴋ Tᴏ Dᴏᴡɴʟᴏᴀᴅ 😍**", reply_to_message_id=message.id)
 		except UserAlreadyParticipant:
-			bot.send_message(message.chat.id,"**Chat alredy Joined**", reply_to_message_id=message.id)
+			bot.send_message(message.chat.id,"**Sᴏʀʀʏ 😔, Tʜɪs Cʜᴀɴɴᴇʟ Aʟʀᴇᴀᴅʏ Sᴀᴠᴇᴅ Iɴ Mʏ Dᴀᴛᴀʙᴀsᴇ Pʟᴇᴀsᴇ Sᴇɴᴅ Mᴇ Aɴʏ Lɪɴᴋ Tᴏ Dᴏᴡɴʟᴏᴀᴅ Iᴛ**", reply_to_message_id=message.id)
 		except InviteHashExpired:
-			bot.send_message(message.chat.id,"**Invalid Link**", reply_to_message_id=message.id)
+			bot.send_message(message.chat.id,"**Tʜɪs Lɪɴᴋ Nᴏᴛ Fᴏᴜɴᴅ Iɴ Tʜɪs Cʜᴀɴɴᴇʟ Pʟᴇᴀsᴇ Cʜᴇᴄᴋ Aɴᴅ Sᴇɴᴅ Mᴇ Aɢᴀɪɴ ❤️**", reply_to_message_id=message.id)
 
 	# getting message
 	elif "https://t.me/" in message.text:
@@ -154,7 +154,7 @@ def handle_private(message: pyrogram.types.messages_and_media.message.Message, c
 			bot.send_message(message.chat.id, msg.text, entities=msg.entities, reply_to_message_id=message.id)
 			return
 
-		smsg = bot.send_message(message.chat.id, '__Downloading__', reply_to_message_id=message.id)
+		smsg = bot.send_message(message.chat.id, '__Dᴏᴡɴʟᴏᴀᴅɪɴɢ ⚡️__', reply_to_message_id=message.id)
 		dosta = threading.Thread(target=lambda:downstatus(f'{message.id}downstatus.txt',smsg),daemon=True)
 		dosta.start()
 		file = acc.download_media(msg, progress=progress, progress_args=[message,"down"])
@@ -247,7 +247,7 @@ def get_message_type(msg: pyrogram.types.messages_and_media.message.Message):
 	except: pass
 
 
-USAGE = """**Sᴇɴᴅ ᴍᴇ Lɪɴᴋ ᴏғ ᴀɴʏ ᴍᴇssᴀɢᴇ ᴛᴏ ᴄʟᴏɴᴇ ɪᴛ ʜᴇʀᴇ, Fᴏʀ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴍᴇssᴀɢᴇ, sᴇɴᴅ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ғɪʀsᴛ.**
+USAGE = """**Sᴇɴᴅ ᴍᴇ Lɪɴᴋ ᴏғ ᴀɴʏ ᴍᴇssᴀɢᴇ ᴛᴏ ᴄʟᴏɴᴇ ɪᴛ ʜᴇʀᴇ, Fᴏʀ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴍᴇssᴀɢᴇ, sᴇɴᴅ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ғɪʀsᴛ.**\n\n**🍷 Mᴏʀᴇ Usᴇғᴜʟ Bᴏᴛs : @ProCoderZBots**
 """
 
 
