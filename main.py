@@ -62,12 +62,18 @@ def progress(current, total, message, type):
 		fileup.write(f"{current * 100 / total:.1f}%")
 
 
-# start command
 @bot.on_message(filters.command(["start"]))
-def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
-	bot.send_message(message.chat.id, f"**__👋 Hi** **{message.from_user.mention}**, **I am Save Restricted Bot, I can send you restricted content by it's post link__**\n\n{USAGE}",
-	reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("🌐 Update Channel", url="https://t.me/ProCoderZBots")]]), reply_to_message_id=message.id)
-
+def send_start(client, message):
+    buttons = [
+        [InlineKeyboardButton("🌐 Update Channel", url="https://t.me/VJ_Botz"), InlineKeyboardButton("Official Channel", url="https://t.me/official_channel")],
+        [InlineKeyboardButton("More Bots", url="https://t.me/more_bots")]
+    ]
+    bot.send_message(
+        message.chat.id, 
+        f"**👋 Hᴇʏ {message.from_user.mention}, I am Save Restricted Bot, I ᴀᴍ Sᴀᴠᴇ Rᴇsᴛʀɪᴄᴛᴇᴅ Bᴏᴛ, I ᴄᴀɴ sᴇɴᴅ ʏᴏᴜ ʀᴇsᴛʀɪᴄᴛᴇᴅ ᴄᴏɴᴛᴇɴᴛ ʙʏ ɪᴛs ᴘᴏsᴛ ʟɪɴᴋ**\n\n{USAGE}",
+        reply_markup=InlineKeyboardMarkup(buttons),
+        reply_to_message_id=message.message_id
+    )
 
 @bot.on_message(filters.text)
 def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
