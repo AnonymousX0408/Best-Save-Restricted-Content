@@ -65,12 +65,12 @@ def progress(current, total, message, type):
 @bot.on_message(filters.command(["start"]))
 def send_start(client, message):
     buttons = [
-        [InlineKeyboardButton("🌐 Update Channel", url="https://t.me/VJ_Botz"), InlineKeyboardButton("Official Channel", url="https://t.me/official_channel")],
-        [InlineKeyboardButton("More Bots", url="https://t.me/more_bots")]
+        [InlineKeyboardButton("『Uᴘᴅᴀᴛᴇs』", url="https://t.me/ProCoderZBots"), InlineKeyboardButton("『Cʜᴀɴɴᴇʟ』", url="https://t.me/Pro_CoderZ")],
+        [InlineKeyboardButton("『Mᴏʀᴇ Bᴏᴛs』", url="https://t.me/ProCoderZBots/12")]
     ]
     bot.send_message(
         message.chat.id, 
-        f"**👋 Hᴇʏ {message.from_user.mention}, I am Save Restricted Bot, I ᴀᴍ Sᴀᴠᴇ Rᴇsᴛʀɪᴄᴛᴇᴅ Bᴏᴛ, I ᴄᴀɴ sᴇɴᴅ ʏᴏᴜ ʀᴇsᴛʀɪᴄᴛᴇᴅ ᴄᴏɴᴛᴇɴᴛ ʙʏ ɪᴛs ᴘᴏsᴛ ʟɪɴᴋ**\n\n{USAGE}",
+        f"**👋 Hᴇʏ {message.from_user.mention}, I ᴀᴍ Sᴀᴠᴇ Rᴇsᴛʀɪᴄᴛᴇᴅ Bᴏᴛ, I ᴄᴀɴ sᴇɴᴅ ʏᴏᴜ ʀᴇsᴛʀɪᴄᴛᴇᴅ ᴄᴏɴᴛᴇɴᴛ ʙʏ ɪᴛs ᴘᴏsᴛ ʟɪɴᴋ**\n\n{USAGE}",
         reply_markup=InlineKeyboardMarkup(buttons),
         reply_to_message_id=message.message_id
     )
@@ -83,7 +83,7 @@ def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 	if "https://t.me/+" in message.text or "https://t.me/joinchat/" in message.text:
 
 		if acc is None:
-			bot.send_message(message.chat.id,f"**String Session is not Set**", reply_to_message_id=message.id)
+			bot.send_message(message.chat.id,f"**Sᴛʀɪɴɢ Sᴇssɪᴏɴ ɪs ɴᴏᴛ Sᴇᴛ Pʟᴇᴀsᴇ Cᴏɴᴛᴀᴄᴛ Wɪᴛʜ Mʏ Oᴡɴᴇʀ @TeamCoderZ_Bot**", reply_to_message_id=message.id)
 			return
 
 		try:
@@ -113,7 +113,7 @@ def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 				chatid = int("-100" + datas[4])
 				
 				if acc is None:
-					bot.send_message(message.chat.id,f"**String Session is not Set**", reply_to_message_id=message.id)
+					bot.send_message(message.chat.id,f"**Sᴛʀɪɴɢ Sᴇssɪᴏɴ ɪs ɴᴏᴛ Sᴇᴛ Pʟᴇᴀsᴇ Cᴏɴᴛᴀᴄᴛ Wɪᴛʜ Mʏ Oᴡɴᴇʀ @TeamCoderZ_Bot**", reply_to_message_id=message.id)
 					return
 				
 				handle_private(message,chatid,msgid)
@@ -125,10 +125,10 @@ def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 				username = datas[4]
 				
 				if acc is None:
-					bot.send_message(message.chat.id,f"**String Session is not Set**", reply_to_message_id=message.id)
+					bot.send_message(message.chat.id,f"**Sᴛʀɪɴɢ Sᴇssɪᴏɴ ɪs ɴᴏᴛ Sᴇᴛ Pʟᴇᴀsᴇ Cᴏɴᴛᴀᴄᴛ Wɪᴛʜ Mʏ Oᴡɴᴇʀ @TeamCoderZ_Bot**", reply_to_message_id=message.id)
 					return
 				try: handle_private(message,username,msgid)
-				except Exception as e: bot.send_message(message.chat.id,f"**Error** : __{e}__", reply_to_message_id=message.id)
+				except Exception as e: bot.send_message(message.chat.id,f"**Eʀʀᴏʀ** : __{e}__", reply_to_message_id=message.id)
 
 			# public
 			else:
@@ -136,16 +136,16 @@ def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_me
 
 				try: msg  = bot.get_messages(username,msgid)
 				except UsernameNotOccupied: 
-					bot.send_message(message.chat.id,f"**The username is not occupied by anyone**", reply_to_message_id=message.id)
+					bot.send_message(message.chat.id,f"**Tʜᴇ ᴜsᴇʀɴᴀᴍᴇ ɪs ɴᴏᴛ ᴏᴄᴄᴜᴘɪᴇᴅ ʙʏ ᴀɴʏᴏɴᴇ**", reply_to_message_id=message.id)
 					return
 
 				try: bot.copy_message(message.chat.id, msg.chat.id, msg.id,reply_to_message_id=message.id)
 				except:
 					if acc is None:
-						bot.send_message(message.chat.id,f"**String Session is not Set**", reply_to_message_id=message.id)
+						bot.send_message(message.chat.id,f"**Sᴛʀɪɴɢ Sᴇssɪᴏɴ ɪs ɴᴏᴛ Sᴇᴛ Pʟᴇᴀsᴇ Cᴏɴᴛᴀᴄᴛ Wɪᴛʜ Mʏ Oᴡɴᴇʀ @TeamCoderZ_Bot**", reply_to_message_id=message.id)
 						return
 					try: handle_private(message,username,msgid)
-					except Exception as e: bot.send_message(message.chat.id,f"**Error** : __{e}__", reply_to_message_id=message.id)
+					except Exception as e: bot.send_message(message.chat.id,f"**Eʀʀᴏʀ** : __{e}__", reply_to_message_id=message.id)
 
 			# wait time
 			time.sleep(3)
