@@ -66,8 +66,9 @@ def progress(current, total, message, type):
 @bot.on_message(filters.command(["start"]))
 def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
     buttons = [
-        [InlineKeyboardButton("『Uᴘᴅᴀᴛᴇs』", url="https://t.me/ProCoderZBots")],
-        [InlineKeyboardButton("『Cʜᴀɴɴᴇʟ』", url="https://t.me/Pro_CoderZ")]
+        [InlineKeyboardButton("『Uᴘᴅᴀᴛᴇs』", url="https://t.me/ProCoderZBots"),
+         InlineKeyboardButton("『Cʜᴀɴɴᴇʟ』", url="https://t.me/Pro_CoderZ")],
+        [InlineKeyboardButton("『Mᴏʀᴇ Bᴏᴛs』", url="https://t.me/ProCoderZBots/12")]
     ]
     bot.send_message(
         message.chat.id, 
@@ -75,7 +76,7 @@ def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_
         reply_markup=InlineKeyboardMarkup(buttons),
         reply_to_message_id=message.id
     )
-
+	
 @bot.on_message(filters.text)
 def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
 	print(message.text)
